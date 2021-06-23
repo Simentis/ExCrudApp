@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using VS_CrudApp.Data;
 
 namespace VS_CrudApp
 {
@@ -26,6 +28,9 @@ namespace VS_CrudApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<VS_BookPostsContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("VS_BookPostsContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
