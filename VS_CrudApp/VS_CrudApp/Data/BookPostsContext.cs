@@ -14,6 +14,6 @@ namespace VS_CrudApp.Data
         {
         }
 
-        public DbSet<VS_CrudApp.Models.BookPost> BookPosts { get; set; }
+        public DbSet<BookPost> BookPosts { get; set; }
     }
 }

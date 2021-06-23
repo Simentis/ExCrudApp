@@ -29,17 +29,14 @@ namespace VS_CrudApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           // services.AddControllers();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-
-            services.AddMvc(options => options.EnableEndpointRouting = false);
-
-            services.AddDbContext<BookPostsContext>(options =>
+        services.AddControllers();
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+        services.AddDbContext<BookPostsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BookPostsContext")));
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
+                    builder => builder.SetIsOriginAllowed(origin => true)
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials());
@@ -54,10 +51,9 @@ namespace VS_CrudApp
             
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            
+            app.UseRouting();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -71,12 +67,12 @@ namespace VS_CrudApp
             app.UseStaticFiles();
             //app.UseSpaStaticFiles();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
-            });
+       //     app.UseMvc(routes =>
+         //   {
+           //     routes.MapRoute(
+             //       name: "default",
+               //     template: "{controller}/{action=Index}/{id?}");
+            //});
 
             //app.UseSpa(spa =>
             //{
@@ -93,10 +89,9 @@ namespace VS_CrudApp
 
 
 
-           // app.UseRouting();
+ 
 
-           // app.UseAuthorization();
-
+           
            // app.UseEndpoints(endpoints =>
          //   {
              //   endpoints.MapControllers();
