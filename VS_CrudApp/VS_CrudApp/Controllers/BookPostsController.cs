@@ -14,9 +14,9 @@ namespace VS_CrudApp.Controllers
     [ApiController]
     public class BookPostsController : ControllerBase
     {
-        private readonly VS_BookPostsContext _context;
+        private readonly BookPostsContext _context;
 
-        public BookPostsController(VS_BookPostsContext context)
+        public BookPostsController(BookPostsContext context)
         {
             _context = context;
         }

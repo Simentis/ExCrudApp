@@ -7,9 +7,9 @@ using VS_CrudApp.Models;
 
 namespace VS_CrudApp.Data
 {
-    public class VS_BookPostsContext : DbContext
+    public class BookPostsContext : DbContext
     {
-        public VS_BookPostsContext (DbContextOptions<VS_BookPostsContext> options)
+        public BookPostsContext (DbContextOptions<BookPostsContext> options)
             : base(options)
         {
         }

@@ -2,7 +2,7 @@
   "dependencies": {
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:VS_BookPostsContext"
+      "connectionId": "ConnectionStrings:BookPostsContext"
     }
   }
 }
