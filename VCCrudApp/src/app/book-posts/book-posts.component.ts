@@ -9,7 +9,7 @@ import { BookPost } from '../models/bookpost';
   styleUrls: ['./book-posts.component.scss']
 })
 export class BookPostsComponent implements OnInit {
-  bookPosts$: Observable<BookPost[]> | undefined;
+  bookPosts$!: Observable<BookPost[]>;
 
   constructor(private bookPostService: BookPostService) {
   }
@@ -19,11 +19,11 @@ export class BookPostsComponent implements OnInit {
   }
 
   loadBookPosts() {
-    this.bookPosts$ = this.bookPostService.getBookPosts();
+    this.bookPosts$! = this.bookPostService.getBookPosts();
   }
 
   delete(postId: number) {
-    const ans = confirm('Do you want to delete book post with id: ' + postId);
+    const ans = confirm('Do you want to delete book with id: ' + postId);
     if (ans) {
       this.bookPostService.deleteBookPost(postId).subscribe((data) => {
         this.loadBookPosts();

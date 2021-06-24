@@ -10,8 +10,8 @@ import { BookPost } from '../models/bookpost';
   styleUrls: ['./book-post.component.scss']
 })
 export class BookPostComponent implements OnInit {
-  bookPost$: Observable<BookPost>;
-  postId: number;
+  bookPost$!: Observable<BookPost>;
+  postId!: number;
 
   constructor(private bookPostService: BookPostService, private avRoute: ActivatedRoute) {
     const idParam = 'id';

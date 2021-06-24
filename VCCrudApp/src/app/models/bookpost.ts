@@ -1,7 +1,7 @@
-export class BookPost {
+export interface BookPost {
     postId?: number;
-    creator: string | undefined;
-    title: string | undefined;
-    body: string | undefined;
-    dt: Date | undefined;
+    creator: string ;
+    title: string ;
+    body: string  ;
+    dt: Date  ;
   }

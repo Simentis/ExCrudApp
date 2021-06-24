@@ -1,1 +1,11 @@
-<p>book-post works!</p>
+<ng-container *ngIf="(bookPost$ | async) as bookPost; else loading">
+
+  <h1>{{ bookPost.title }}</h1>
+  <div>{{ bookPost.body }}</div>
+  <ul>
+    <li>{{ bookPost.creator }}</li>
+    <li>{{ bookPost.dt }}</li>
+  </ul>
+
+</ng-container>
+<ng-template #loading>Loading…</ng-template>

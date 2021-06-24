@@ -141,3 +141,5 @@ C:\Users\Marcin\Documents\GitHub\ExCrudApp\VS_CrudApp\VS_CrudApp\obj\Debug\netco
 C:\Users\Marcin\Documents\GitHub\ExCrudApp\VS_CrudApp\VS_CrudApp\obj\Debug\netcoreapp3.1\staticwebassets\VS_CrudApp.StaticWebAssets.Manifest.cache
 C:\Users\Marcin\Documents\GitHub\ExCrudApp\VS_CrudApp\VS_CrudApp\obj\Debug\netcoreapp3.1\staticwebassets\VS_CrudApp.StaticWebAssets.xml
 C:\Users\Marcin\Documents\GitHub\ExCrudApp\VS_CrudApp\VS_CrudApp\obj\Debug\netcoreapp3.1\scopedcss\bundle\VS_CrudApp.styles.css
+C:\Users\Marcin\Documents\GitHub\ExCrudApp\VS_CrudApp\VS_CrudApp\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Marcin\Documents\GitHub\ExCrudApp\VS_CrudApp\VS_CrudApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll

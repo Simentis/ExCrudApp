@@ -14,9 +14,9 @@ export class BookPostAddEditComponent implements OnInit {
   actionType: string;
   formTitle: string;
   formBody: string;
-  postId: number;
+  postId!: number;
   errorMessage: any;
-  existingBookPost: BookPost;
+  existingBookPost!: BookPost;
 
   constructor(private bookPostService: BookPostService, private formBuilder: FormBuilder, private avRoute: ActivatedRoute, private router: Router) {
     const idParam = 'id';
@@ -57,7 +57,7 @@ export class BookPostAddEditComponent implements OnInit {
     if (this.actionType === 'Add') {
       let bookPost: BookPost = {
         dt: new Date(),
-        creator: 'Martin',
+        creator: 'Marcin',
         title: this.form.get(this.formTitle).value,
         body: this.form.get(this.formBody).value
       };
