@@ -64,7 +64,7 @@ export class BookPostAddEditComponent implements OnInit {
 
       this.bookPostService.saveBookPost(bookPost)
         .subscribe((data) => {
-          this.router.navigate(['/bookpost', data.postId]);
+          this.router.navigate(['/']);
         });
     }
 
@@ -79,12 +79,13 @@ export class BookPostAddEditComponent implements OnInit {
       this.bookPostService.updateBookPost(bookPost.postId, bookPost)
         .subscribe((data) => {
           this.router.navigate([this.router.url]);
+          this.router.navigate(['/']);
         });
     }
   }
 
   cancel() {
-    this.router.navigate(['/']);
+     this.router.navigate(['/']);
   }
 
   get title() { return this.form.get(this.formTitle); }

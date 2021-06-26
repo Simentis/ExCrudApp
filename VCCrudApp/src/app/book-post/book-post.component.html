@@ -1,10 +1,10 @@
 <ng-container *ngIf="(bookPost$ | async) as bookPost; else loading">
-
+ 
   <h1>{{ bookPost.title }}</h1>
   <div>{{ bookPost.body }}</div>
   <ul>
-    <li>{{ bookPost.creator }}</li>
-    <li>{{ bookPost.dt }}</li>
+    <span>Added by:   {{ bookPost.creator }}</span>
+      <p><span>Date:   {{ bookPost.dt }}</span></p>
   </ul>
 
 </ng-container>
