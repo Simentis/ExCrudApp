@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { BookPostService } from '../services/book-post.service';
 import { BookPost } from '../models/bookpost';
@@ -13,7 +13,7 @@ export class BookPostComponent implements OnInit {
   bookPost$!: Observable<BookPost>;
   postId!: number;
 
-  constructor(private bookPostService: BookPostService, private avRoute: ActivatedRoute) {
+  constructor(private bookPostService: BookPostService, private avRoute: ActivatedRoute,private router: Router) {
     const idParam = 'id';
     if (this.avRoute.snapshot.params[idParam]) {
       this.postId = this.avRoute.snapshot.params[idParam];
@@ -22,6 +22,11 @@ export class BookPostComponent implements OnInit {
 
   ngOnInit() {
     this.loadBookPost();
+    
+    setTimeout(() => {
+      this.router.navigate(['/']);
+  }, 5000);  
+
   }
 
   loadBookPost() {

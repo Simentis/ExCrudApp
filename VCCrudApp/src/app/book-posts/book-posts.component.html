@@ -1,20 +1,18 @@
 <h1 style="text-align:center">Book list</h1>
 
 <p *ngIf="!(bookPosts$ | async)"><em>Loading...</em></p>
-<p>
-  <a [routerLink]="['/add']" class="btn btn-primary float-right mb-3">New post</a>
-</p>
-
-
-<div class="d-flex flex-wrap">
+<div class="text-center"><p>
+  <a [routerLink]="['/add']" class="btn btn-danger mb-3"style="width: 40%;margin-bottom:0px">Add new post</a>
+</p></div>
+<div class="d-flex flex-wrap"style="margin-top:0px">
 <div class="card" style="width: 310px; margin: 5px;" *ngFor="let bookPost of (bookPosts$ | async)" >
-  <div class="card-body">
+  <div class="card-body d-flex flex-column">
       <h4 class="card-title"><a [routerLink]="['/bookpost/', bookPost.postId]">Title:   <b>{{ bookPost.title }}</b></a></h4>
       <h6 class="text-muted card-subtitle mb-2"><b>ID:</b>    {{ bookPost.postId }}</h6>
       <p class="card-text"><b>Note:</b>   {{ bookPost.body }}</p>
-      <a [routerLink]="" (click)="delete(bookPost.postId)" style= "margin: 5px; margin-right: 30px;margin-top:50px;"class="btn btn-danger btn-sm float-left">Delete</a>
+     <div class=" mt-auto"> <a [routerLink]="" (click)="delete(bookPost.postId)" style= "margin: 5px; margin-right: 30px;margin-top:20px;"class="btn btn-danger btn-sm float-left">Delete</a>
 
-     <a [routerLink]="['/bookpost/edit/', bookPost.postId]" style= "margin: 5px;margin-top:50px; margin-left: 30px;float:right;" class=" btn btn-primary btn-sm float-right">Edit</a>
+     <a [routerLink]="['/bookpost/edit/', bookPost.postId]" style= "margin: 5px;margin-top:20px; margin-left: 30px;float:right;" class=" btn btn-primary btn-sm float-right">Edit</a>
      <p class="card-text "style="text-align:center;"><b>Added by:</b>   {{ bookPost.creator }}</p>
-    </div>
+    </div> </div>
 </div> </div>
