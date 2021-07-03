@@ -11,6 +11,7 @@ import { BookPostService } from './services/book-post.service';
 import { LibraryPostsComponent } from './library-posts/library-posts.component';
 import { LibraryPostService } from './services/library-post.service';
 import { LibraryPostAddEditComponent } from './library-post-add-edit/library-post-add-edit.component';
+import { LibraryPostComponent } from './library-post/library-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { LibraryPostAddEditComponent } from './library-post-add-edit/library-pos
     BookPostComponent,
     BookPostAddEditComponent,
     LibraryPostsComponent,
-    LibraryPostAddEditComponent
+    LibraryPostAddEditComponent,
+    LibraryPostComponent
   ],
   imports: [
     BrowserModule,

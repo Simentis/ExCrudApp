@@ -2,9 +2,9 @@
 
 <p *ngIf="!(bookPosts$ | async)"><em>Loading...</em></p>
 <div class="text-center"><p>
-  <a [routerLink]="['/add']" class="btn btn-danger mb-3"style="width: 20%;margin-bottom:0px">Add new post</a>
-  <a [routerLink]="['/library']" class="btn btn-success mb-3"style="width: 20%;margin-left:20px;margin-bottom:0px">Library</a>
-  <a [routerLink]="['/library/add']" class="btn btn-success mb-3"style="width: 20%;margin-left:20px;margin-bottom:0px">Add Library</a>
+  <a [routerLink]="['/add']" class="btn btn-danger mb-3"style="width: 26%;margin-bottom:0px">Add book</a>
+  <a [routerLink]="['/library']" class="btn btn-success mb-3"style="width: 26%;margin-left:20px;margin-bottom:0px">Library</a>
+  <a [routerLink]="['/library/add']" class="btn btn-success mb-3"style="width: 26%;margin-left:20px;margin-bottom:0px">Add library</a>
 </p></div>
 <div class="d-flex flex-wrap"style="margin-top:0 auto">
 <div class="card" style="width: 300px; margin: 10px auto;" *ngFor="let bookPost of (bookPosts$ | async)" >

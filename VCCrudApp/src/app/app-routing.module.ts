@@ -5,10 +5,12 @@ import { BookPostComponent } from './book-post/book-post.component';
 import { BookPostAddEditComponent } from './book-post-add-edit/book-post-add-edit.component';
 import { LibraryPostsComponent } from './library-posts/library-posts.component';
 import { LibraryPostAddEditComponent } from './library-post-add-edit/library-post-add-edit.component';
+import { LibraryPostComponent } from './library-post/library-post.component';
 const routes: Routes = [
   { path: 'library', component: LibraryPostsComponent },
    { path: 'library/add', component: LibraryPostAddEditComponent },
    { path: 'library/edit/:id', component: LibraryPostAddEditComponent },
+   { path: 'librarypost/:id', component: LibraryPostComponent },
    { path: '', component: BookPostsComponent, pathMatch: 'full' },
   { path: 'bookpost/:id', component: BookPostComponent },
   { path: 'add', component: BookPostAddEditComponent },
