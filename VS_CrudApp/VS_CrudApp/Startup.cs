@@ -44,7 +44,7 @@ namespace VS_CrudApp
                         .AllowAnyHeader());
 
             });
-
+          
             services.AddScoped(typeof(IDataRepository<>), typeof(DataRepository<>));
 
             //In production, the Angular files will be served from this directory
@@ -66,30 +66,31 @@ namespace VS_CrudApp
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+           
             app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
-            app.UseSpaStaticFiles();
-
+          
+            
             app.UseEndpoints(routes =>
             {
-                routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                routes.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
             });
+            
+            //app.UseSpaStaticFiles();
+            //app.UseSpa(spa =>
+            //{
+            //    //    // To learn more about options for serving an Angular SPA from ASP.NET Core,
+            //    //    // see https://go.microsoft.com/fwlink/?linkid=864501
 
-            app.UseSpa(spa =>
-            {
-                //    // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                //    // see https://go.microsoft.com/fwlink/?linkid=864501
+            //    spa.Options.SourcePath = "ClientApp";
 
-                spa.Options.SourcePath = "ClientApp";
-
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
-            });
+            //    if (env.IsDevelopment())
+            //    {
+            //        spa.UseAngularCliServer(npmScript: "start");
+            //    }
+            //});
         }
     }
 }

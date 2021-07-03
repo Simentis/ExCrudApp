@@ -1,32 +1,18 @@
 
-<h1>{{actionType}} book</h1>
+<h1>{{actionType}} library</h1>
 <div class="card">
   <div class="card-body">
 <form [formGroup]="form" (ngSubmit)="save()" #formDir="ngForm" novalidate>
   <div class="form-group row">
-    <label class=" control-label col-md-12 ">Title</label>
+    <label class=" control-label col-md-12 ">Name</label>
     <div class="col-md-12">
       <input class="form-control" type="text" formControlName="title">
     </div>
   </div>
-
-  
-  
-    <select formControlName="libb" style="margin-top: 20px;"class="form-select"  [(ngModel)]='selectedValue'>
-      <option disabled [value]=null>Change library</option>
-    <option   *ngFor="let libbb of (libraryPosts$ | async)" [value]= "libbb.libId" > {{ libbb.title }}</option>
-  
- 
-  </select>
-
-  
-  
-  
-  
   <div class="form-group row">
-    <label class="control-label col-md-12" for="Body">Note</label>
+    <label class="control-label col-md-12" for="Body">Adress</label>
     <div class="col-md-12">
-      <textarea class="form-control" rows="10" formControlName="body"></textarea>
+      <textarea class="form-control" rows="1" formControlName="body"></textarea>
     </div>
     
   </div>
@@ -36,5 +22,3 @@
   </div>
 </form>
 </div></div> 
-
-     

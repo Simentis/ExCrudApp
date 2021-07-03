@@ -3,16 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { BookPost } from '../models/bookpost';
 import { LibraryPost } from '../models/librarypost';
 @Injectable({
   providedIn: 'root'
 })
-export class BookPostService {
-
+export class LibraryPostService {
   myAppUrl: string;
   myApiUrl: string;
-  myApiLUrl: string;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json; charset=utf-8'
@@ -20,64 +17,48 @@ export class BookPostService {
   };
   constructor(private http: HttpClient) {
       this.myAppUrl = environment.appUrl;
-      this.myApiUrl = 'api/BookPosts/';
-      this.myApiLUrl = 'api/LibraryPosts/';
+      this.myApiUrl = 'api/LibraryPosts/';
   }
 
-  getBookPosts(): Observable<BookPost[]> {
-    return this.http.get<BookPost[]>(this.myAppUrl + this.myApiUrl)
+  getLibraryPosts(): Observable<LibraryPost[]> {
+    return this.http.get<LibraryPost[]>(this.myAppUrl + this.myApiUrl)
     .pipe(
       retry(1),
       catchError(this.errorHandler)
     );
-  }
-
-  getBookPost(postId: number): Observable<BookPost> {
-      return this.http.get<BookPost>(this.myAppUrl + this.myApiUrl + postId)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandler)
-      );
-  }
-
-  saveBookPost(bookPost:any): Observable<BookPost> {
-      return this.http.post<BookPost>(this.myAppUrl + this.myApiUrl, JSON.stringify(bookPost), this.httpOptions)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandler)
-      );
-  }
-
-  updateBookPost(postId: number, bookPost:any): Observable<BookPost> {
-      return this.http.put<BookPost>(this.myAppUrl + this.myApiUrl + postId, JSON.stringify(bookPost), this.httpOptions)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandler)
-      );
-  }
-
-  deleteBookPost(postId: number): Observable<BookPost> {
-      return this.http.delete<BookPost>(this.myAppUrl + this.myApiUrl + postId)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandler)
-      );
   }
 
   getLibraryPost(libId: number): Observable<LibraryPost> {
-    return this.http.get<LibraryPost>(this.myAppUrl + this.myApiLUrl + libId)
-    .pipe(
-      retry(1),
-      catchError(this.errorHandler)
-    );
-}
-getLibraryPosts(): Observable<BookPost[]> {
-  return this.http.get<BookPost[]>(this.myAppUrl + this.myApiLUrl)
-  .pipe(
-    retry(1),
-    catchError(this.errorHandler)
-  );
-}
+      return this.http.get<LibraryPost>(this.myAppUrl + this.myApiUrl + libId)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+  saveLibraryPost(libraryPost:any): Observable<LibraryPost> {
+      return this.http.post<LibraryPost>(this.myAppUrl + this.myApiUrl, JSON.stringify(libraryPost), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+  updateLibraryPost(libId: number, libraryPost:any): Observable<LibraryPost> {
+      return this.http.put<LibraryPost>(this.myAppUrl + this.myApiUrl + libId, JSON.stringify(libraryPost), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+  deleteLibraryPost(libId: number): Observable<LibraryPost> {
+      return this.http.delete<LibraryPost>(this.myAppUrl + this.myApiUrl + libId)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
 
   errorHandler(error) {
     let errorMessage = '';

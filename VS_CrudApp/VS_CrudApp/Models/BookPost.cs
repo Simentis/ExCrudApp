@@ -18,9 +18,12 @@ namespace VS_CrudApp.Models
 		public string Title { get; set; }
 
 		[Required]
-		public string Body { get; set; }
+        public string Body { get; set; }
+
+		public string Lib { get; set; }
 
 		[Required]
 		public DateTime Dt { get; set; }
+     
 	}
 }

@@ -4,4 +4,6 @@ export interface BookPost {
     title: string ;
     body: string  ;
     dt: Date  ;
+    lib: number;
   }
+  

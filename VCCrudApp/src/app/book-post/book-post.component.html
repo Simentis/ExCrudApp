@@ -1,12 +1,28 @@
 <ng-container *ngIf="(bookPost$ | async) as bookPost; else loading">
    <div class="card">
     <div class="card-body">
-        <h4 class="card-title">{{ bookPost.title }}</h4>
-        <h6 class="text-muted card-subtitle mb-2">{{ bookPost.body }}</h6>
-        <p class="card-text">{{ bookPost.creator }}</p>
-        <p class="card-text">{{ bookPost.dt }}</p>
+        <h4 class="card-title">Title: {{ bookPost.title }}</h4>
+        <h6 class="text-muted card-subtitle mb-2">Note: {{ bookPost.body }}</h6>
+        <p class="card-text">Creator of post: {{ bookPost.creator }}</p>
+        <p class="card-text">Date post: {{ bookPost.dt }}</p>
+        <form [formGroup]="form" #formDir="ngForm"novalidate>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <input class="form-control" style="display:none" type="number" formControlName="lib">
+          </div>
+        </div>
+        <button (click)="onSubmit()">Show library</button></form>
       </div></div>  
 </ng-container>
-<div class="text-center" style="margin-top:10%"><img class="img-fluid rounded-circle " src="assets/adder.gif"></div>
+
+<ng-container *ngIf="(libraryPost$ | async) as libr;">
+  <div class="card">
+   <div class="card-body">
+      
+       <h6 class="text-muted card-subtitle mb-2">Library: {{ libr.title }}</h6>
+       <h4 class="card-title">Adress: {{ libr.owner }}</h4>
+     </div></div>  
+</ng-container>
+
 <ng-template #loading>Loading…</ng-template>
 

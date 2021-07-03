@@ -13,7 +13,7 @@ namespace VS_CrudApp.Data
             : base(options)
         {
         }
-
+        public DbSet<LibraryPost> LibraryPosts { get; set; }
         public DbSet<BookPost> BookPosts { get; set; }
     }
 }

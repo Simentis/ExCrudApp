@@ -10,7 +10,7 @@ using VS_CrudApp.Data;
 namespace VS_CrudApp.Migrations
 {
     [DbContext(typeof(BookPostsContext))]
-    [Migration("20210623151130_Initial")]
+    [Migration("20210703092218_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,9 @@ namespace VS_CrudApp.Migrations
                     b.Property<DateTime>("Dt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Lib")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -46,6 +49,26 @@ namespace VS_CrudApp.Migrations
                     b.HasKey("PostId");
 
                     b.ToTable("BookPosts");
+                });
+
+            modelBuilder.Entity("VS_CrudApp.Models.LibraryPost", b =>
+                {
+                    b.Property<int>("LibId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Owner")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LibId");
+
+                    b.ToTable("LibraryPosts");
                 });
 #pragma warning restore 612, 618
         }
