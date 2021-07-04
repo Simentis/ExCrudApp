@@ -1,6 +1,6 @@
 <div class="text-center"><p>
-  <a [routerLink]="['/']" class="btn btn-danger mb-3"style="width: 26%;margin-bottom:0px">Books</a>
-  <a [routerLink]="['/library']" class="btn btn-success mb-3"style="width: 26%;margin-left:20px;margin-bottom:0px">Library</a>
+  <a [routerLink]="['/']" class="btn btn-danger mb-3" id="nav">Books</a>
+  <a [routerLink]="['/library']" class="btn btn-success mb-3" id="nav">Library</a>
   
 </p></div>
 <ng-container *ngIf="(libraryPost$ | async) as libraryPost; else loading">
@@ -13,8 +13,8 @@
  </ng-container>
  <ng-container >
  <div class="d-flex flex-wrap">
-    <i *ngFor="let book of (bookPost$ | async)" style="margin:auto;" >
-    <div class="card" style="width: 300px; margin: 10px auto;"  *ngIf="book.lib == libId" >
+    <i *ngFor="let book of (bookPost$ | async)"  id="libcardout">
+    <div class="card" id="libcardin"  *ngIf="book.lib == libId" >
       <div class="card-body d-flex flex-column" >
           
           <h6 class="text-muted card-subtitle mb-2"><b>Title:</b> {{ book.title }}</h6>

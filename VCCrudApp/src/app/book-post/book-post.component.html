@@ -1,6 +1,6 @@
 <div class="text-center"><p>
-  <a [routerLink]="['/']" class="btn btn-danger mb-3"style="width: 26%;margin-bottom:0px">Books</a>
-  <a [routerLink]="['/library']" class="btn btn-success mb-3"style="width: 26%;margin-left:20px;margin-bottom:0px">Library</a>
+  <a [routerLink]="['/']" class="btn btn-danger mb-3" id="nav">Books</a>
+  <a [routerLink]="['/library']" class="btn btn-success mb-3"id="nav">Library</a>
   
 </p></div>
 <ng-container *ngIf="(bookPost$ | async) as bookPost; else loading">
@@ -13,7 +13,7 @@
         <form [formGroup]="form" #formDir="ngForm"novalidate>
         <div class="form-group row">
           <div class="col-md-12">
-            <input class="form-control" style="display:none" type="number" formControlName="lib">
+            <input class="form-control" id="forminput" type="number" formControlName="lib">
           </div>
         </div>
         <button class="btn btn-success float-right" (click)="onSubmit()">Show library</button></form>

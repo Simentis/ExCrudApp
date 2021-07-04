@@ -1,7 +1,7 @@
 
 <div class="text-center"><p>
-  <a [routerLink]="['/']" class="btn btn-danger mb-3"style="width: 26%;margin-bottom:0px">Books</a>
-  <a [routerLink]="['/library']" class="btn btn-success mb-3"style="width: 26%;margin-left:20px;margin-bottom:0px">Library</a>
+  <a [routerLink]="['/']" class="btn btn-danger mb-3" id="nav">Books</a>
+  <a [routerLink]="['/library']" class="btn btn-success mb-3" id="nav">Library</a>
 </p></div>
 <h1>{{actionType}} book</h1>
 <div class="card">
@@ -16,7 +16,7 @@
 
   
   
-    <select formControlName="libb" style="margin-top: 20px;"class="form-select"  [(ngModel)]='selectedValue'>
+    <select formControlName="libb" id="select"class="form-select"  [(ngModel)]='selectedValue'>
       <option disabled [value]=null>Change library</option>
     <option   *ngFor="let libbb of (libraryPosts$ | async)" [value]= "libbb.libId" > {{ libbb.title }}</option>
   
@@ -35,8 +35,8 @@
     
   </div>
   <div class="form-group">
-  <button type="submit" style= "margin: 5px;margin-top:50px; margin-left: 30px;float:inline-start;"class="btn btn-success float-right">Save</button>
-    <button class="btn btn-danger float-left"style= "margin: 5px;margin-top:50px; margin-left: 30px;float:right;" (click)="cancel()">Cancel</button>
+  <button type="submit" id="leftbutton" class="btn btn-success float-right">Save</button>
+    <button class="btn btn-danger float-left" id="rightbutton"  (click)="cancel()">Cancel</button>
   </div>
 </form>
 </div></div> 
