@@ -1,3 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
- 
+input:invalid {
+    border: 2px solid red;
+    color: red;
+  }
+  
+
+
+  
+  
+  textarea:invalid {
+    border: 2px solid red;
+    color: red;
+  }
+  
+  
+  select:invalid {
+    border: 2px solid red;
+    color: red;
+    lighting-color: red;
+  }
+  input:required {
+    border: 1px dashed red;
+  }

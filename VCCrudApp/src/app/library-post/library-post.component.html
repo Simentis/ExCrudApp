@@ -1,3 +1,8 @@
+<div class="text-center"><p>
+  <a [routerLink]="['/']" class="btn btn-danger mb-3"style="width: 26%;margin-bottom:0px">Books</a>
+  <a [routerLink]="['/library']" class="btn btn-success mb-3"style="width: 26%;margin-left:20px;margin-bottom:0px">Library</a>
+  
+</p></div>
 <ng-container *ngIf="(libraryPost$ | async) as libraryPost; else loading">
     <div class="card">
      <div class="card-body">
