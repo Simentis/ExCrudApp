@@ -7,19 +7,20 @@
     <div class="card">
      <div class="card-body">
         <h6 class="text-muted card-subtitle mb-2">Library: {{ libraryPost.title }}</h6>
-        <h4 class="card-title">Adress: {{ libraryPost.owner }}</h4>
+        <h4 class="card-title">Adress: {{ libraryPost.adress }}</h4>
       
        </div></div>  
  </ng-container>
- <ng-container >
- <div class="d-flex flex-wrap">
-    <i *ngFor="let book of (bookPost$ | async)"  id="libcardout">
-    <div class="card" id="libcardin"  *ngIf="book.lib == libId" >
-      <div class="card-body d-flex flex-column" >
-          
-          <h6 class="text-muted card-subtitle mb-2"><b>Title:</b> {{ book.title }}</h6>
+
+ <div class="d-flex flex-wrap"  >
+  <ng-container *ngFor="let book of (bookPost$ | async)">
+    <div  class="d-flex flex-column" id="libcardout" *ngIf="book.lib == libId" >
+    <div class="card d-flex" id="libcardin"   >
+      <div class="card-body" >
+        <h6 class="text-muted card-subtitle mb-2"><b>Title:</b> {{ book.title }}</h6>
         <h6 class="card-title"><b>Added:</b> {{ book.dt }}</h6>
         <h6 class="card-title"><b>Note:</b> {{ book.body }}</h6>
-          </div></div>
-        </i> </div></ng-container>
+        </div></div>
+        </div> 
+      </ng-container></div>
  <ng-template #loading>Loading…</ng-template>

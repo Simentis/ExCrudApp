@@ -9,7 +9,7 @@
 <div class="d-flex flex-wrap">
 <div class="card" id="cardbookposts" *ngFor="let bookPost of (bookPosts$ | async)" >
   <div class="card-body d-flex flex-column">
-      <h4 class="card-title"><a [routerLink]="['/bookpost/', bookPost.postId]">Title:   <b>{{ bookPost.title }}</b></a></h4>
+      <h4 class="card-title"><a [routerLink]="['/bookpost/', bookPost.postId]"><b>{{ bookPost.title }}</b></a></h4>
       <h6 class="text-muted card-subtitle mb-2"><b>ID:</b>    {{ bookPost.postId }}</h6>
       <p class="card-text"><b>Note:</b>   {{ bookPost.body }}</p>
      <div class=" mt-auto"> <a [routerLink]="" (click)="delete(bookPost.postId)" id="leftdownbutton" class="btn btn-danger btn-sm float-left">Delete</a>

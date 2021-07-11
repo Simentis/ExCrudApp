@@ -59,7 +59,7 @@ export class LibraryPostService {
         catchError(this.errorHandler)
       );
   }
-
+  
   errorHandler(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

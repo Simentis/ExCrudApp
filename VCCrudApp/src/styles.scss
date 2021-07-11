@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 input:invalid {
-    border: 2px solid red;
+    border: 2px solid rgb(190, 112, 9);
     color: red;
   }
   
@@ -16,11 +16,13 @@ input:invalid {
     margin-top: 20px;
   }
   #leftbutton{
+    min-width:10%;
     margin:10px;
     margin-top:50px; 
     float:left;
   }
   #rightbutton{
+    min-width:10%;
     margin:10px;
     margin-top:50px; 
     float:right;
@@ -43,14 +45,12 @@ input:invalid {
     float:right;
   }
   #libcardout{
-    margin-left:auto;
-    margin-right: auto;
+    margin-top:20px; 
+    margin:auto;
   }
   #libcardin{
+    margin-top:20px; 
     width: 300px;
-    margin-left: 10px;
-    margin-right: 10px; 
-    margin-top: 10px;
 }
   #txtcnt{
     text-align:center;
@@ -81,3 +81,18 @@ input:invalid {
         background-color:rgb(78, 39, 117);
         border-color:rgb(78, 39, 117);
          }
+         
+        
+         .btn-success:active{
+            background-color:rgb(78, 39, 117);
+            border-color:rgb(78, 39, 117);
+             }
+             
+             .btn-success:focus{
+                background-color:rgb(78, 39, 117);
+                border-color:rgb(78, 39, 117);
+                 }
+                 .btn[disabled]{
+                   background-color: rgb(78, 39, 117);
+                   border-color:rgb(78, 39, 117);
+                 }

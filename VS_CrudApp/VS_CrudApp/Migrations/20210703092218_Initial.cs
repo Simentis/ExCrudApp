@@ -30,7 +30,7 @@ namespace VS_CrudApp.Migrations
                 {
                     LibId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Owner = table.Column<string>(nullable: false),
+                    Adress = table.Column<string>(nullable: false),
                     Title = table.Column<string>(nullable: false)
                 },
                 constraints: table =>

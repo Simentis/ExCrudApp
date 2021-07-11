@@ -1,7 +1,6 @@
 export interface LibraryPost {
     libId?: number;
-    owner: string;
-    //owner==adress
+    adress: string;
     title: string;
     
 }

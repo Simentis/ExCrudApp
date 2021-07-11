@@ -19,8 +19,7 @@ export class BookPostAddEditComponent implements OnInit {
   formLi: string;
   postId!: number;
   libId: number;
-
-  selectedValue = null;
+  selectedValue = "";
   errorMessage: any;
   existingBookPost!: BookPost;
   libraryPosts$!: Observable<LibraryPost[]>;

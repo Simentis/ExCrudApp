@@ -12,7 +12,7 @@ namespace VS_CrudApp.Models
         public int LibId { get; set; }
 
         [Required]
-        public string Owner { get; set; }
+        public string Adress { get; set; }
 
         [Required]
         public string Title { get; set; }

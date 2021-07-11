@@ -44,7 +44,7 @@ export class LibraryPostAddEditComponent implements OnInit {
         .subscribe(data => (
           this.existingLibraryPost = data,
           this.form.controls[this.formTitle].setValue(data.title),
-          this.form.controls[this.formAdress].setValue(data.owner)
+          this.form.controls[this.formAdress].setValue(data.adress)
         ));
     }
   }
@@ -57,7 +57,7 @@ export class LibraryPostAddEditComponent implements OnInit {
     if (this.actionType === 'Add') {
       let libraryPost: LibraryPost = {
         title: this.form.get(this.formTitle).value,
-        owner: this.form.get(this.formAdress).value
+        adress: this.form.get(this.formAdress).value
       };
 
       this.libraryPostService.saveLibraryPost(libraryPost)
@@ -70,7 +70,7 @@ export class LibraryPostAddEditComponent implements OnInit {
       let libraryPost: LibraryPost = {
         libId: this.existingLibraryPost.libId,
         title: this.form.get(this.formTitle).value,
-        owner: this.form.get(this.formAdress).value
+        adress: this.form.get(this.formAdress).value
       };
       this.libraryPostService.updateLibraryPost(libraryPost.libId, libraryPost)
         .subscribe((data) => {
