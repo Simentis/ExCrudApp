@@ -5,6 +5,15 @@
 
 
 Random view
+
+
+
 ![Book List](booklist.png)
+
+
+
 Random form
+
+
+
 ![Book List Form](booklistform.png)
